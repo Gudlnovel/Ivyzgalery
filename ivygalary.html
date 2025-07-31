@@ -1,52 +1,178 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ivy's Gallery</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivy's Galeria</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 24px;
+    }
+    .search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .search-bar input {
+      padding: 8px;
+      font-size: 14px;
+    }
+    .search-bar span {
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .slider {
+      position: relative;
+      width: 100%;
+      max-height: 300px;
+      overflow: hidden;
+    }
+    .slider img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slider img.active {
+      opacity: 1;
+      position: relative;
+    }
+    .about {
+      padding: 20px;
+      text-align: center;
+      background-color: #f1f1f1;
+    }
+    .gallery {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    #contact {
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    #contact form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    #contact input, #contact textarea {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+    #contact button {
+      padding: 12px;
+      background-color: #000;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #111;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Ivy's Gallery</h1>
-    <nav>
-      <ul>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <h1>Ivy's Galeria</h1>
+    <div class="search-bar">
+      <input type="text" placeholder="Search...">
+      <span>🛒</span>
+    </div>
   </header>
 
-  <main>
-    <section id="gallery">
-      <h2>Photo Gallery</h2>
-      <div class="gallery-grid">
-        <img src="images/img1.jpg" alt="Image 1" />
-        <img src="images/img2.jpg" alt="Image 2" />
-        <img src="images/img3.jpg" alt="Image 3" />
-        <img src="images/img4.jpg" alt="Image 4" />
-        <img src="images/img5.jpg" alt="Image 5" />
-        <img src="images/img6.jpg" alt="Image 6" />
-        <img src="images/img7.jpg" alt="Image 7" />
-        <img src="images/img8.jpg" alt="Image 8" />
-        <img src="images/img9.jpg" alt="Image 9" />
-      </div>
-    </section>
+  <div class="slider" id="slider">
+    <img src="https://i.postimg.cc/xdvp8qSs/IMG-20250729-WA0036.jpg" class="active">
+    <img src="https://i.postimg.cc/m2pvWcbC/IMG-20250729-WA0037.jpg">
+    <img src="https://i.postimg.cc/GtqZ2tv0/IMG-20250729-WA0019.jpg">
+    <img src="https://i.postimg.cc/DZQ99BZw/IMG-20250729-WA0034.jpg">
+    <img src="https://i.postimg.cc/tJkHx2QM/IMG-20250729-WA0054.jpg">
+  </div>
 
-    <section id="contact">
-      <h2>Contact Ivy</h2>
-      <form name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-  </main>
+  <div class="about">
+    <h2>About Ivy's Galeria</h2>
+    <p>Welcome to Ivy's Galeria — a creative space where art, style, and culture come alive through stunning visuals. Each piece in our collection tells a story of beauty, craftsmanship, and bold expression. Dive in and explore Ivy's unique vision today.</p>
+  </div>
+
+  <div class="gallery">
+    <img src="https://i.postimg.cc/sgg7KWxC/IMG-20250729-WA0049.jpg">
+    <img src="https://i.postimg.cc/d1x8TVwc/IMG-20250729-WA0050.jpg">
+    <img src="https://i.postimg.cc/YCCqTfQ8/IMG-20250729-WA0051.jpg">
+    <img src="https://i.postimg.cc/j57jZxyb/IMG-20250729-WA0052.jpg">
+    <img src="https://i.postimg.cc/zXSVsG6D/IMG-20250729-WA0053.jpg">
+    <img src="https://i.postimg.cc/vZnMJqcr/IMG-20250729-WA0048.jpg">
+    <img src="https://i.postimg.cc/2jXDVRWd/IMG-20250729-WA0047.jpg">
+    <img src="https://i.postimg.cc/JzNv39s2/IMG-20250729-WA0046.jpg">
+    <img src="https://i.postimg.cc/PxCkMSsv/IMG-20250729-WA0045.jpg">
+    <img src="https://i.postimg.cc/RV7xG38d/IMG-20250729-WA0044.jpg">
+  </div>
+
+  <section id="contact">
+    <h2>Contact Ivy</h2>
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Ivy's Gallery. All rights reserved.</p>
+    <p>&copy; 2025 Ivy's Galeria. All rights reserved.</p>
   </footer>
+
+  <script>
+    const slides = document.querySelectorAll('#slider img');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 2000);
+  </script>
 </body>
-</html>
+        </html>
